@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% -10%, rgba(124, 154, 255, 0.15), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(255, 173, 236, 0.08), transparent 55%),
+    radial-gradient(circle at 50% 110%, rgba(87, 206, 255, 0.12), transparent 45%),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), "Helvetica Neue", Helvetica, system-ui,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: rgba(124, 154, 255, 0.3);
+  color: inherit;
+}
+
+.backdrop-grid {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 0
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 0);
+  background-size: 80px 80px;
+}
+
+.aurora {
+  filter: blur(60px);
+  opacity: 0.8;
+}
